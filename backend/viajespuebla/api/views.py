@@ -86,6 +86,7 @@ def profile_list(request):
         data = JSONParser().parse(request)
         #Display parameters
         serializer = ProfileSerializer(data=data)
+        
         if serializer.is_valid():
             serializer.save()
             return JSONResponse(serializer.data, status=201)

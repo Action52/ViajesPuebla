@@ -27,6 +27,28 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1','ec2-13-58-243-123.us-east-2.compute.amazonaws.com']
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
 
 # Application definition
 
@@ -87,8 +109,12 @@ WSGI_APPLICATION = 'viajespuebla.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'viajespuebla',
+        'USER': 'leonvillapun',
+        'PASSWORD': 'schwarz',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

@@ -5,7 +5,7 @@ from rest_framework import serializers
 class ViajeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Viaje
-        fields = ('title', 'description', 'start_date', 'end_date', 'price', 'suscriptors')
+        fields = ('title', 'description', 'start_date', 'end_date', 'price', 'image','suscriptors')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

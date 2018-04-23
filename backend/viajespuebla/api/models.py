@@ -11,6 +11,7 @@ class Viaje(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     price = models.DecimalField(decimal_places = 2, max_digits = 6)
+    image = models.CharField(max_length=5000)
     suscriptors = models.ManyToManyField(User)
 
     class Meta:
